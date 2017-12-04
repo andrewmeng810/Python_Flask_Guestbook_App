@@ -7,7 +7,7 @@ import sqlite3
 
 from sqlite3 import Error
 
-DATABASE = r"//Users/Andrew/Documents/python/python_scripts/Section7/Flask_App/guestbook_db.db"     # Create the database global variable
+DATABASE = r"/guestbook_db.db"     # Create the database global variable
 conn = sqlite3.connect(DATABASE)    # initiate database connection
 c = conn.cursor()                   # create cursor
 
