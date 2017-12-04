@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Sign My Guestbook!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="static/css/Bootstrap/bootstrap.min.css">
+  <style>
+    pre {
+      height: auto;
+      max-height: 500px;
+      overflow: auto;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="static/css/Bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    function open_window(url) {
+      window.open(url);
+    }
+  </script>
+</head>
+
+<h1> Add a new post</h1>
+<form action="/create/" method="Post">
+  Name:<input type="text" name="name"><br>
+  Comment:<input type="text" name="comment"><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+<h3>past comments</h3>
+<table class="table table-striped">
+  <tr>
+    <th width="25%">date</th><th width="25%">Name</th><th>Comment</th>
+  </tr>
+
+    {% for post in posts %}
+  <tr>
+    <th width="25%">{{post[3]}}</th><th width="25%">{{post[1]}}</th><th>{{post[2]}}</th>
+
+  </tr>
+    {% endfor %}
+
+
+  </html>
